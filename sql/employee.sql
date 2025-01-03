@@ -1,0 +1,5 @@
+CREATE TABLE employee (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    age INTEGER
+);
