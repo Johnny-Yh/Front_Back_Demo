@@ -1,33 +1,29 @@
 <template>
     <div>
-        <template>
-            <el-table
-                  :data="tableData"
-                  style="width: 60%;margin-top:30px;">
-                <el-table-column
-                      prop="id"
-                      label="ID"
-                      width="180">
-                </el-table-column>
-                <el-table-column
-                      prop="name"
-                      label="姓名"
-                      width="180">
-                </el-table-column>
-                <el-table-column
-                      prop="age"
-                      label="年龄">
-                </el-table-column>
-                <el-table-column
-                      label="操作">
-                    <template slot-scope="scope">
-                        <el-button type="primary" size="small" @click="select(scope.row)">查看</el-button>
-                        <el-button type="warning" size="small" @click="update(scope.row)">修改</el-button>
-                        <el-button type="danger" size="small" @click="remove(scope.row)">删除</el-button>
-                    </template>
-                </el-table-column>
-            </el-table>
-        </template>
+        <el-table
+            :data="tableData"
+            style="width: 100%; margin-top: 30px;">
+            <el-table-column
+                prop="id"
+                label="ID">
+            </el-table-column>
+            <el-table-column
+                prop="name"
+                label="姓名">
+            </el-table-column>
+            <el-table-column
+                prop="age"
+                label="年龄">
+            </el-table-column>
+            <el-table-column
+                label="操作">
+                <template slot-scope="scope">
+                    <el-button type="primary" size="small" @click="select(scope.row)">查看</el-button>
+                    <el-button type="warning" size="small" @click="update(scope.row)">修改</el-button>
+                    <el-button type="danger" size="small" @click="remove(scope.row)">删除</el-button>
+                </template>
+            </el-table-column>
+        </el-table>
     </div>
 </template>
 
@@ -82,5 +78,15 @@ export default {
 </script>
 
 <style scoped>
+/* 确保表格占满父容器宽度 */
+.el-table {
+    width: 100%;
+}
 
+/* 如果需要让表格的父容器也占满页面宽度，可以添加以下样式 */
+div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
 </style>
