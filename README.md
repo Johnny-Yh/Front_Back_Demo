@@ -29,10 +29,6 @@
 
 #### 2.1 Vue【前端】
 
-##### 环境要求：
-
-node 16.x
-
 ##### 运行方式：
 
 ```shell
@@ -42,10 +38,6 @@ npm run serve
 ```
 
 #### 2.2 Go【后端】
-
-##### 环境要求：
-
-Go 1.17
 
 ##### 运行方式：
 
@@ -67,22 +59,11 @@ https://blog.csdn.net/Mr_YanMingXin/article/details/130451171
 
 ### 4 TODO
 
+- 优化前端界面
 - 后端返回值需要规范
 - 安全性问题
 - Go的DB操作换成ORM可节省大量代码
 - API生成和相关文档工具使用
 - http常用状态码
 - ......
-
----
-
-如有问题可邮件1712229564@qq.com
-
-> 公众号【扯编程的淡】：
->
-> ![image-20230430204003260](https://img-blog.csdnimg.cn/56b9c71cee5443048fa4b98ba8d98e82.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBATXJfWWFuTWluZ1hpbg==,size_20,color_FFFFFF,t_70,g_se,x_16)
-
-> 感谢您的支持，可扫码进行赞赏<**微信**>:
->
-> <img src="https://img-blog.csdnimg.cn/8233dee0e742434e8e1a1684004a7f4e.png" alt="微信图片_20230430202859" style="zoom: 70%;" />
 
