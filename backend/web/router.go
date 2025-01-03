@@ -14,7 +14,7 @@ const (
 func RunHttp() error {
 	r := gin.Default()
 	r.Use(CorsConfig())
-	router := r.Group("/student")
+	router := r.Group("/employee")
 	{
 		router.POST("/save", Save)
 		router.GET("/findAll", FindAll)

@@ -23,12 +23,12 @@ type EmployeeDb struct {
 	Db     *sql.DB
 }
 
-func (s *EmployeeDb) Save(student Employee) error {
+func (s *EmployeeDb) Save(employee Employee) error {
 	stmt, err := s.Db.Prepare(fmt.Sprintf("INSERT INTO %s(name,age) VALUES(?,?)", s.TbName))
 	if err != nil {
 		return err
 	}
-	if _, err = stmt.Exec(student.Name, student.Age); err != nil {
+	if _, err = stmt.Exec(employee.Name, employee.Age); err != nil {
 		return err
 	}
 	return nil
@@ -41,11 +41,11 @@ func (s *EmployeeDb) GetAll() ([]Employee, error) {
 		return nil, err
 	}
 	for rows.Next() {
-		var student Employee
-		if err := rows.Scan(&student.Id, &student.Name, &student.Age); err != nil {
+		var employee Employee
+		if err := rows.Scan(&employee.Id, &employee.Name, &employee.Age); err != nil {
 			return nil, err
 		}
-		employees = append(employees, student)
+		employees = append(employees, employee)
 	}
 	return employees, nil
 }
@@ -75,12 +75,12 @@ func (s *EmployeeDb) Remove(id int32) error {
 	return nil
 }
 
-func (s *EmployeeDb) Update(student Employee) error {
+func (s *EmployeeDb) Update(employee Employee) error {
 	stmt, err := s.Db.Prepare(fmt.Sprintf("UPDATE %s SET name=?,age=? WHERE id=?", s.TbName))
 	if err != nil {
 		return err
 	}
-	if _, err := stmt.Exec(student.Name, student.Age, student.Id); err != nil {
+	if _, err := stmt.Exec(employee.Name, employee.Age, employee.Id); err != nil {
 		return err
 	}
 	return nil
